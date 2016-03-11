@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<style>
+
+    html,
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 100);
+
+    }
+
+    .link {
+        stroke: #ccc;
+    }
+
+    .body-text {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 100);
+    }
+
+    .sidebar-inputs {
+        background-color: rgba(80, 80, 80, 0);
+        margin: 0.5em 0;
+        outline:none;
+        border:1px solid #cccccc
+
+    }
+
+    .node circle {
+        fill: steelblue;
+        stroke: #ccc;
+    }
+
+    .node_selected circle {
+        fill: #00b41c;
+        stroke: #ccc;
+    }
+
+        .node_neighbour circle {
+        fill: rgba(232, 113, 68, 0.68);
+        stroke: #ccc;
+    }
+
+    .node text {
+      pointer-events: none;
+      font: 14px sans-serif;
+      fill: rgb(255, 134, 24);
+      stroke-width: "0";
+    }
+
+    .button1 {
+        background-color: rgba(80, 80, 80, 0.4);
+        color: #fff;
+        padding: 5px;
+
+        cursor:default;
+        -webkit-user-select: none; /* Chrome/Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+ */
+
+        margin: 0;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+
+    }
+
+    #rightmenu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1%;
+
+        width: 250px;
+        background-color: rgba(80, 80, 80, 0.4);
+        height:100vh;
+
+        backdrop-filter: blur(10px);
+    }
+
+
+    #titleinput {
+        resize: none;
+        width: 100%;
+
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+
+    }
+
+
+    #descriptioninput {
+        resize: none;
+        width: 100%;
+        height: 50%
+
+    }
+
+    #nodelist {
+        position: relative;
+        width: 100%;
+    }
+
+
+
+    #updatebutton {
+        position: relative;
+        top: 25px;
+        left: 0px;
+    }
+
+    #savebutton {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+    }
+
+
+</style>
+
+<body>
+
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="../static/js/force.js"></script>
+
+<div id="savebutton" class="button1">
+    Save
+</div>
+
+<div id="rightmenu">
+
+    <textarea id="titleinput" class="sidebar-inputs" rows="1">
+        </textarea>
+
+    <textarea id="descriptioninput" class="sidebar-inputs body-text" rows="4" cols="30">
+    </textarea>
+
+    <p> Connected Nodes: </p>
+
+    <select id="nodelist" class="sidebar-inputs body-text" size="5">
+    </select>
+    <i id="selectnodes" class="fa fa-crosshairs"></i>
+
+    <div id="updatebutton" class="button1">
+    Update
+    </div>
+
+</div>
